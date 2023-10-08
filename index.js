@@ -9,7 +9,7 @@ var roleText = [
 ];
 
 // Define the speed of typing in milliseconds
-var speed = 200;
+var speed = 250;
 
 // Initialize a variable to store the current index of the character being typed
 var index = 0;

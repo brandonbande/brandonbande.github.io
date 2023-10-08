@@ -50,3 +50,31 @@ body,html{
     margin-right: 10px;
     color: white;
 }
+
+@media (max-width: 800px) {
+    /* Change the flex direction to column */
+    .wrapper {
+      flex-direction: column;
+    }
+  
+    /* Adjust the width of the left and right divs */
+    .left {
+      width: 100%;
+    }
+  
+    .right {
+      width: 100%;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 1400px) {
+    .left h1{
+        font-size: 32px;
+        margin: 0;
+    }
+    
+    .left p{
+        font-size: 24px;
+        min-height: 30px;
+    }
+  }
