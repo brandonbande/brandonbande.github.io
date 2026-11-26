@@ -140,7 +140,7 @@
     "name": "Web3Forms",
     "endpoint": "https://api.web3forms.com/submit",
     "accessKey": null,
-    "accessKeyNote": "Web3Forms access key (public-safe; your email stays hidden). Get one at web3forms.com.",
+    "accessKeyNote": "Set the WEB3FORMS_ACCESS_KEY repository secret (Settings → Secrets and variables → Actions).",
     "honeypot": "botcheck"
   },
   "privacyNotice": {

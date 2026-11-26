@@ -8,6 +8,7 @@ the integrity gate refuses them first.
 
 import html
 import json
+import os
 from datetime import date
 import re
 from pathlib import Path
@@ -455,13 +456,15 @@ class Sections:
         for f in s["forms"]:
             head = f'<h3 class="panel-headline">{esc(f["headline"])}</h3><p>{esc(f["context"])}</p>'
             provider = s.get("formProvider", {})
-            action = provider.get("endpoint") if provider.get("accessKey") else None
+            # The access key is injected at build time (CI secret) so it never lives in the repo.
+            access_key = os.environ.get("WEB3FORMS_ACCESS_KEY") or provider.get("accessKey")
+            action = provider.get("endpoint") if access_key else None
             fields = "".join(self.field(f["id"], fl) for fl in f["fields"])
             honeypot = (f'<div class="hp" aria-hidden="true"><label>{esc(ui["honeypot"])}'
                         f'<input type="checkbox" name="{attr(provider.get("honeypot", "botcheck"))}" tabindex="-1"></label></div>')
             hidden = ""
             if action:
-                hidden = (f'<input type="hidden" name="access_key" value="{attr(provider["accessKey"])}">'
+                hidden = (f'<input type="hidden" name="access_key" value="{attr(access_key)}">'
                           f'<input type="hidden" name="subject" value="{attr(f["tabLabel"])} enquiry from brandonbande.co.zw">'
                           f'<input type="hidden" name="from_name" value="brandonbande.co.zw">')
             unconfigured = "" if action else f' data-unconfigured="{attr(ui["unconfigured"])}"'
