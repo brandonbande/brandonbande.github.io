@@ -1,23 +1,44 @@
-<DOCTYPE HTML>
-  <html>
-    <head>
-      <title>Brandon Portfolio</title>
-      <link rel="stylesheet" type="text/css" href="index.css">
-    </head>
-    <body>
-      <div class="wrapper">
-        <div class="left">
-          <h1>I am Brandon T. Bande</h1>
-          <p id = 'role'>I am a developer</p>
-          <div class="links">
-            <a href="htts://www.linkedin.com/in/brandoebande">LinkedIn</a>
-            <a href="htts://www.linkedin.com/in/brandoebande">Twitter</a>
-            <a href="htts://www.linkedin.com/in/brandoebande">GitHub</a>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101114">
+    <meta name="description" content="Brandon T. Bande — developer, designer, and community lead.">
+    <title>Brandon T. Bande — Developer &amp; Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <main class="hero">
+      <div class="hero__content">
+        <a class="wordmark" href="#home" aria-label="Brandon Bande home">BB<span>.</span></a>
+        <section class="intro" id="home" aria-labelledby="intro-title">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> AVAILABLE FOR WHAT'S NEXT</p>
+          <h1 id="intro-title">Hi, I’m<br><span class="name">Brandon Bande.</span></h1>
+          <p class="role-line"><span class="role-prefix">I’m a</span> <span id="role" aria-live="polite">developer</span><span class="cursor" aria-hidden="true"></span></p>
+          <p class="intro__copy">I build thoughtful digital experiences and bring good people together around great ideas.</p>
+          <div class="actions">
+            <a class="button button--primary" href="mailto:hello@brandonbande.com">Let’s talk <span aria-hidden="true">↗</span></a>
+            <a class="button button--quiet" href="https://github.com/brandonbande" target="_blank" rel="noopener noreferrer">Explore my work <span aria-hidden="true">↗</span></a>
           </div>
-        </div>
-        <div class="right">
-        </div>
-        <script src="index.js"></script>
+        </section>
+        <footer class="footer">
+          <span>Based wherever good ideas happen.</span>
+          <nav class="socials" aria-label="Social links">
+            <a href="https://www.linkedin.com/in/brandoebande" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/brandonbande" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          </nav>
+        </footer>
       </div>
-    </body>
-  </html>
+      <div class="hero__visual" role="img" aria-label="Portrait of Brandon Bande">
+        <div class="visual-shade"></div>
+        <div class="visual-caption"><span>BRANDON T. BANDE</span><span>CREATIVE MIND · BUILDER</span></div>
+        <div class="visual-mark" aria-hidden="true">B<span>.</span></div>
+      </div>
+    </main>
+  </body>
+</html>

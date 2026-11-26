@@ -1,45 +1,33 @@
-// Get the element where you want to display the typing effect
-var element = document.getElementById("role");
+(() => {
+  const roleElement = document.getElementById('role');
+  if (!roleElement) return;
 
-// Define the text you want to type
-var roleText = [
-  "I am a developer",
-  "I am a designer",
-  "I am a community lead"
-];
+  const roles = ['developer', 'designer', 'community lead'];
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducedMotion) return;
 
-// Define the speed of typing in milliseconds
-var speed = 250;
+  let roleIndex = 0;
+  let characterIndex = roles[0].length;
+  let deleting = false;
 
-// Initialize a variable to store the current index of the character being typed
-var index = 0;
+  function animateRole() {
+    const currentRole = roles[roleIndex];
+    roleElement.textContent = currentRole.slice(0, characterIndex);
 
-// Initialize a variable to store the current index of the role being typed
-var roleIndex = 0;
+    if (!deleting && characterIndex === currentRole.length) {
+      deleting = true;
+      window.setTimeout(animateRole, 1500);
+      return;
+    }
 
-// Define a function that will type one character at a time
-function type() {
-  // Check if the index is less than the length of the current role
-  if (index < roleText[roleIndex].length) {
-    // Append the current character and a span element with a blinking cursor style to the element's innerHTML
-    element.innerHTML =
-      roleText[roleIndex].slice(0, index + 1) +
-      '<span style="border-right: 0.08em solid; animation: blink 0.75s step-end infinite;"> </span>';
-    // Increment the index
-    index++;
-    // Call the type function again after a delay
-    setTimeout(type, speed);
-  } else {
-    // Clear the element's innerHTML
-    element.innerHTML = "";
-    // Reset the index
-    index = 0;
-    // Increment the roleIndex and wrap it around if it reaches the end of the roleText array
-    roleIndex = (roleIndex + 1) % roleText.length;
-    // Call the type function again after a delay
-    setTimeout(type, speed);
+    if (deleting && characterIndex === 0) {
+      deleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+    }
+
+    characterIndex += deleting ? -1 : 1;
+    window.setTimeout(animateRole, deleting ? 55 : 100);
   }
-}
 
-// Call the type function for the first time
-type();
+  window.setTimeout(animateRole, 1800);
+})();

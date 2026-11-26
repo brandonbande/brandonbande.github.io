@@ -1,88 +1,72 @@
-body,html{
-    background-color: rgb(37, 34, 34);
-    width: 100vw;
-    height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: dark;
+  --ink: #f5f4f1;
+  --muted: #a5a4a8;
+  --accent: #c4f268;
+  --background: #101114;
+  --panel: #17181d;
 }
 
-.wrapper{
-    display: flex;
-    height: 98vh;
-    width: 98vw;
+* { box-sizing: border-box; }
+html { min-width: 320px; min-height: 100%; scroll-behavior: smooth; }
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--background);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
-
-.right{
-    flex: 1;
-    width: 49%;
-    background-image: url('image.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+a { color: inherit; }
+.hero { display: grid; grid-template-columns: 1.04fr .96fr; min-height: 100vh; }
+.hero__content { position: relative; display: flex; flex-direction: column; justify-content: space-between; min-height: 100vh; padding: 38px clamp(28px, 7.3vw, 112px) 32px; }
+.wordmark { width: fit-content; color: var(--ink); font: 700 24px 'Space Grotesk', sans-serif; letter-spacing: -2px; text-decoration: none; }
+.wordmark span, .visual-mark span { color: var(--accent); }
+.intro { width: min(100%, 560px); margin: auto 0; padding: 70px 0; animation: rise-in .8s ease both; }
+.eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 28px; color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .16em; }
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 14px #c4f26888; }
+h1 { margin: 0; font: 500 clamp(48px, 6vw, 82px)/1.02 'Space Grotesk', sans-serif; letter-spacing: -.075em; }
+.name { color: var(--accent); }
+.role-line { min-height: 42px; margin: 27px 0 15px; color: #d7d6d4; font: 500 clamp(19px, 2vw, 25px) 'Space Grotesk', sans-serif; }
+#role { color: var(--accent); }
+.cursor { display: inline-block; height: 1.05em; margin-left: 3px; border-right: 2px solid var(--accent); vertical-align: -.16em; animation: blink 1s steps(2, start) infinite; }
+.intro__copy { max-width: 410px; margin: 0; color: var(--muted); font-size: 16px; line-height: 1.8; }
+.actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 32px; }
+.button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 18px; padding: 0 19px; border: 1px solid transparent; border-radius: 4px; font-size: 13px; font-weight: 700; text-decoration: none; transition: transform .2s ease, background .2s ease, border-color .2s ease; }
+.button:hover { transform: translateY(-2px); }
+.button--primary { background: var(--accent); color: #171910; }
+.button--primary:hover { background: #d4ff83; }
+.button--quiet { border-color: #36373c; color: var(--ink); }
+.button--quiet:hover { border-color: var(--muted); }
+.footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; color: var(--muted); font-size: 11px; }
+.socials { display: flex; gap: 22px; }
+.socials a { text-decoration: none; transition: color .2s ease; }
+.socials a:hover { color: var(--accent); }
+.socials a span { color: var(--accent); }
+.hero__visual { position: relative; min-height: 100vh; overflow: hidden; background: var(--panel) url('image.jpg') center 38% / cover no-repeat; }
+.visual-shade { position: absolute; inset: 0; background: linear-gradient(180deg, #10111420 40%, #101114a8 100%), linear-gradient(90deg, #10111418, transparent 40%); }
+.visual-caption { position: absolute; right: 34px; bottom: 30px; left: 34px; display: flex; justify-content: space-between; gap: 12px; color: #ffffffbd; font-size: 9px; font-weight: 700; letter-spacing: .15em; }
+.visual-mark { position: absolute; right: 30px; top: 24px; color: #ffffffb0; font: 600 18px 'Space Grotesk', sans-serif; }
+@keyframes blink { to { visibility: hidden; } }
+@keyframes rise-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 800px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero__content { min-height: 76vh; padding: 27px 28px 25px; }
+  .intro { padding: 68px 0; }
+  h1 { font-size: clamp(52px, 11vw, 76px); }
+  .hero__visual { min-height: 55vh; background-position: center 35%; }
+  .visual-caption { right: 24px; bottom: 22px; left: 24px; }
 }
-
-.left{
-    flex: 1;
-    width: 49%;
-    background-color: #120437;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 40px;
-    color: white;
+@media (max-width: 430px) {
+  .hero__content { min-height: 82vh; padding-right: 22px; padding-left: 22px; }
+  .intro__copy { font-size: 15px; }
+  .footer { align-items: flex-start; flex-direction: column; }
+  .hero__visual { min-height: 48vh; }
+  .visual-caption { flex-direction: column; gap: 7px; }
 }
-
-.left h1{
-    font-size: 60px;
-    margin: 0;
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
-
-.left p{
-    font-size: 40px;
-    min-height: 60px;
-}
-
-.left .links a{
-    text-decoration: none;
-    margin-right: 10px;
-    color: white;
-}
-
-@media (max-width: 900px) {
-    /* Change the flex direction to column */
-    .wrapper {
-      flex-direction: column;
-    }
-  
-    /* Adjust the width of the left and right divs */
-    .left {
-      width: 100%;
-      height: 50%;
-    }
-  
-    .right {
-      width: 100%;
-      height: 50%;
-    }
-  }
-
-  @media (min-width: 901px) and (max-width: 1400px) {
-    .left {
-        width: 100%;
-      }
-    
-      .right {
-        width: 100%;
-      }
-    
-    .left h1{
-        font-size: 32px;
-        margin: 0;
-    }
-    
-    .left p{
-        font-size: 24px;
-        min-height: 30px;
-    }
-  }
