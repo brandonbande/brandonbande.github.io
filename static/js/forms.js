@@ -47,9 +47,11 @@ for (const form of document.querySelectorAll('form[data-form]')) {
     button.disabled = true;
     status.textContent = form.dataset.msgSending;
     try {
-      if (!honeypot || !honeypot.value) {
+      const isBot = honeypot && (honeypot.type === 'checkbox' ? honeypot.checked : honeypot.value);
+      if (!isBot) {
         const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
-        if (!res.ok) throw new Error(String(res.status));
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || data.success === false) throw new Error(data.message || String(res.status));
       }
       const done = document.createElement('p');
       done.className = 'form-success';
