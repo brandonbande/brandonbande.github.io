@@ -25,7 +25,7 @@ a { color: inherit; }
 .hero__content { position: relative; display: flex; flex-direction: column; justify-content: space-between; min-height: 100vh; padding: 38px clamp(28px, 7.3vw, 112px) 32px; }
 .wordmark { width: fit-content; color: var(--ink); font: 700 24px 'Space Grotesk', sans-serif; letter-spacing: -2px; text-decoration: none; }
 .wordmark span, .visual-mark span { color: var(--accent); }
-.intro { width: min(100%, 560px); margin: auto 0; padding: 70px 0; animation: rise-in .8s ease both; }
+.intro { width: min(100%, 560px); margin: auto 0; padding: 70px 0 44px; animation: rise-in .8s ease both; }
 .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 28px; color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .16em; }
 .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 14px #c4f26888; }
 h1 { margin: 0; font: 500 clamp(48px, 6vw, 82px)/1.02 'Space Grotesk', sans-serif; letter-spacing: -.075em; }
@@ -41,6 +41,13 @@ h1 { margin: 0; font: 500 clamp(48px, 6vw, 82px)/1.02 'Space Grotesk', sans-seri
 .button--primary:hover { background: #d4ff83; }
 .button--quiet { border-color: #36373c; color: var(--ink); }
 .button--quiet:hover { border-color: var(--muted); }
+.countdown { margin-top: 26px; padding-top: 18px; border-top: 1px solid #2b2c31; }
+.countdown__label { margin: 0 0 10px; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: .16em; }
+.countdown__grid { display: grid; grid-template-columns: repeat(4, minmax(62px, 82px)); gap: 8px; }
+.countdown__unit { display: flex; min-height: 58px; flex-direction: column; justify-content: center; border-right: 1px solid #303136; }
+.countdown__unit:last-child { border-right: 0; }
+.countdown__unit strong { color: var(--accent); font: 500 24px 'Space Grotesk', sans-serif; line-height: 1; letter-spacing: -.04em; }
+.countdown__unit span { margin-top: 5px; color: var(--muted); font-size: 9px; text-transform: uppercase; letter-spacing: .11em; }
 .footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 18px; color: var(--muted); font-size: 11px; }
 .socials { display: flex; gap: 22px; }
 .socials a { text-decoration: none; transition: color .2s ease; }
@@ -55,7 +62,7 @@ h1 { margin: 0; font: 500 clamp(48px, 6vw, 82px)/1.02 'Space Grotesk', sans-seri
 @media (max-width: 800px) {
   .hero { grid-template-columns: 1fr; }
   .hero__content { min-height: 76vh; padding: 27px 28px 25px; }
-  .intro { padding: 68px 0; }
+  .intro { padding: 68px 0 36px; }
   h1 { font-size: clamp(52px, 11vw, 76px); }
   .hero__visual { min-height: 55vh; background-position: center 35%; }
   .visual-caption { right: 24px; bottom: 22px; left: 24px; }
@@ -63,6 +70,8 @@ h1 { margin: 0; font: 500 clamp(48px, 6vw, 82px)/1.02 'Space Grotesk', sans-seri
 @media (max-width: 430px) {
   .hero__content { min-height: 82vh; padding-right: 22px; padding-left: 22px; }
   .intro__copy { font-size: 15px; }
+  .countdown__grid { grid-template-columns: repeat(4, 1fr); }
+  .countdown__unit strong { font-size: 21px; }
   .footer { align-items: flex-start; flex-direction: column; }
   .hero__visual { min-height: 48vh; }
   .visual-caption { flex-direction: column; gap: 7px; }
