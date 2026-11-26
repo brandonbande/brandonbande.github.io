@@ -1,0 +1,128 @@
+{
+  "_meta": {
+    "object": "section",
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null
+  },
+  "id": "bring",
+  "number": "03",
+  "heading": "What I bring",
+  "toggleLabel": "Who is this for?",
+  "offerings": [
+    {
+      "id": "business",
+      "tabLabel": "For Business",
+      "headline": "Better systems. Smarter operations. Meaningful transformation.",
+      "intro": "I work with organisations to understand their challenges, rethink existing processes and identify where technology can create meaningful improvements.",
+      "services": [
+        {
+          "id": "digital-transformation",
+          "name": "Digital Transformation Consultancy",
+          "summary": "Help organisations assess existing operations, identify digital opportunities and develop practical transformation roadmaps.",
+          "scope": [
+            "Current-state assessment",
+            "Digital opportunity identification",
+            "Systems and process analysis",
+            "Requirements definition",
+            "Transformation roadmaps",
+            "Technology alignment with organisational objectives"
+          ],
+          "status": "draft"
+        },
+        {
+          "id": "business-planning-reengineering",
+          "name": "Business Planning & Re-engineering",
+          "summary": "Help organisations develop plans, analyse processes, redesign workflows and align operations with strategic objectives.",
+          "scope": [
+            "Business planning",
+            "Business process analysis",
+            "Process mapping and documentation",
+            "Business process re-engineering",
+            "Requirements elicitation and documentation",
+            "Operational improvement"
+          ],
+          "status": "draft"
+        },
+        {
+          "id": "ai-training",
+          "name": "AI Training",
+          "summary": "Equip teams and organisations with practical knowledge of AI, responsible adoption and opportunities for integrating AI into everyday work.",
+          "scope": [
+            "AI awareness and literacy",
+            "Practical generative AI use",
+            "AI tools and workflows",
+            "AI agents and automation concepts",
+            "Responsible AI and data considerations",
+            "Role-specific and organisational training"
+          ],
+          "status": "draft"
+        }
+      ],
+      "cta": {
+        "label": "Discuss a business challenge",
+        "href": "/?for=business#contact",
+        "analyticsEvent": "cta-consult"
+      }
+    },
+    {
+      "id": "events",
+      "tabLabel": "For Events",
+      "headline": "Ideas worth sharing. Conversations worth having.",
+      "intro": "I speak, facilitate and lead conversations around emerging technology, AI, innovation and the people building our technological future.",
+      "themes": [
+        "AI and the Agentic Era",
+        "Building with open-weight AI",
+        "AI agents and autonomous systems",
+        "The future of African technology",
+        "AI, inclusion and digital sovereignty",
+        "Developer ecosystems and innovation",
+        "People, technology and impact"
+      ],
+      "formats": [
+        "Conference keynotes and talks",
+        "Technical sessions",
+        "Workshops",
+        "Panel discussions",
+        "Facilitation and community engagements"
+      ],
+      "stats": [
+        {
+          "id": "events-count",
+          "value": "30+",
+          "label": "conferences and events",
+          "status": "draft",
+          "evidenceRef": "evidence.events",
+          "note": "rogue0015.github.io currently says '27 conferences'. Reconcile against the events list before release."
+        },
+        {
+          "id": "attendee-reach",
+          "value": "5,000+",
+          "label": "event attendee reach",
+          "definition": null,
+          "status": "draft",
+          "evidenceRef": "evidence.events",
+          "note": "A definition is required : combined reported attendance at events where I spoke, estimated audience, or people addressed directly. rogue0015.github.io says '5,000+ developers', which is a different claim. Reconcile."
+        },
+        {
+          "id": "countries",
+          "value": "6",
+          "label": "countries",
+          "status": "draft",
+          "evidenceRef": "evidence.events",
+          "note": "List the six countries in evidence.json."
+        }
+      ],
+      "emphasis": [
+        "People",
+        "Tech",
+        "Impact"
+      ],
+      "cta": {
+        "label": "Invite me to speak",
+        "href": "/?for=events#contact",
+        "analyticsEvent": "cta-reach"
+      }
+    }
+  ]
+}

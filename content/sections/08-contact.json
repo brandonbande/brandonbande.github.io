@@ -1,0 +1,152 @@
+{
+  "_meta": {
+    "object": "section",
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null
+  },
+  "id": "contact",
+  "number": "08",
+  "heading": "Let's make something happen",
+  "headline": "Have a challenge worth solving?",
+  "intro": "Whether it's transforming a business, exploring AI or bringing an idea to a stage, I'd like to hear about it.",
+  "forms": [
+    {
+      "id": "business",
+      "audience": "business",
+      "tabLabel": "Business",
+      "headline": "Let's work together.",
+      "context": "Consultancy, strategy, business transformation, business planning, process re-engineering and AI training.",
+      "action": null,
+      "analyticsEvent": "form-business-submit",
+      "fields": [
+        {
+          "name": "name",
+          "label": "Name",
+          "type": "text",
+          "required": true,
+          "autocomplete": "name"
+        },
+        {
+          "name": "organisation",
+          "label": "Organisation",
+          "type": "text",
+          "required": false,
+          "autocomplete": "organization"
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true,
+          "autocomplete": "email"
+        },
+        {
+          "name": "enquiry_type",
+          "label": "Nature of enquiry",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Digital transformation",
+            "Business planning & re-engineering",
+            "AI training",
+            "Something else"
+          ]
+        },
+        {
+          "name": "message",
+          "label": "Briefly describe the challenge",
+          "type": "textarea",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "speaking",
+      "audience": "events",
+      "tabLabel": "Speaking",
+      "headline": "Let's start a conversation.",
+      "context": "Conferences, keynotes, workshops, panels and facilitation.",
+      "action": null,
+      "analyticsEvent": "form-speaking-submit",
+      "fields": [
+        {
+          "name": "name",
+          "label": "Name",
+          "type": "text",
+          "required": true,
+          "autocomplete": "name"
+        },
+        {
+          "name": "organisation",
+          "label": "Organisation or event",
+          "type": "text",
+          "required": true,
+          "autocomplete": "organization"
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "email",
+          "required": true,
+          "autocomplete": "email"
+        },
+        {
+          "name": "event_date",
+          "label": "Event date (if known)",
+          "type": "date",
+          "required": false
+        },
+        {
+          "name": "event_location",
+          "label": "Location or format",
+          "type": "text",
+          "required": false,
+          "hint": "City, online or hybrid"
+        },
+        {
+          "name": "engagement_type",
+          "label": "Type of engagement",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Keynote or talk",
+            "Technical session",
+            "Workshop",
+            "Panel",
+            "Facilitation",
+            "Something else"
+          ]
+        },
+        {
+          "name": "brief",
+          "label": "Topic or brief",
+          "type": "textarea",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "general": {
+    "label": "General contact",
+    "email": null,
+    "emailStatus": "draft",
+    "links": [
+      "person.sameAs[LinkedIn]",
+      "person.sameAs[Sessionize]"
+    ]
+  },
+  "formProvider": {
+    "name": "Web3Forms",
+    "endpoint": "https://api.web3forms.com/submit",
+    "accessKey": null,
+    "accessKeyNote": "Web3Forms access key (public-safe; your email stays hidden). Get one at web3forms.com.",
+    "honeypot": "botcheck"
+  },
+  "privacyNotice": {
+    "href": "/privacy/",
+    "status": "draft",
+    "note": "Page generated from content/pages/privacy.json."
+  },
+  "quickAnswersRef": "faq"
+}

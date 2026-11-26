@@ -1,0 +1,39 @@
+{
+  "_meta": {
+    "object": "page",
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null
+  },
+  "path": "/privacy/",
+  "title": "Privacy notice",
+  "intro": "This notice explains what happens to the details you share through this website.",
+  "updated": "2026-11-26",
+  "sections": [
+    {
+      "heading": "What I collect",
+      "body": "If you send an enquiry, I receive what you type into the form: your name, organisation or event, email address, and the details of your request. Nothing else is collected through the forms."
+    },
+    {
+      "heading": "Why I collect it",
+      "body": "Only to read and reply to your enquiry. I do not add you to a mailing list, sell your details or share them for marketing."
+    },
+    {
+      "heading": "Where it goes",
+      "body": "Form submissions are sent through Web3Forms, a form-delivery service, which forwards them to my inbox. My email address is not shown on this site."
+    },
+    {
+      "heading": "How long I keep it",
+      "body": null,
+      "bodyNote": "State a retention period, e.g. 'I keep enquiry emails for up to 24 months, then delete them.'"
+    },
+    {
+      "heading": "Analytics",
+      "body": "This site counts visits with GoatCounter, which does not use cookies and does not collect personal information. It records which pages are viewed and which buttons are pressed, in aggregate."
+    },
+    {
+      "heading": "Your choices",
+      "body": "To see or delete what you sent me, message me on LinkedIn and I will act on your request."
+    }
+  ]
+}

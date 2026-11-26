@@ -1,0 +1,30 @@
+{
+  "_meta": {
+    "object": "section",
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null
+  },
+  "id": "home",
+  "number": "01",
+  "h1": "Brandon Bande.",
+  "identities": [
+    "Systems Thinker.",
+    "AI Builder.",
+    "Business Analyst."
+  ],
+  "statement": "Bringing business strategy, systems thinking and emerging technology together to solve meaningful problems.",
+  "ctas": [
+    "consult",
+    "reach"
+  ],
+  "locationLine": {
+    "text": null,
+    "status": "draft",
+    "note": "Optional. Only show it if accurate and useful (e.g. 'Based in Gweru, Zimbabwe. Working across Africa and online.'). It needs Brandon's wording."
+  },
+  "portrait": {
+    "ref": "person.image",
+    "composition": "40% portrait / 60% typography on desktop; deliberate stack on mobile (see )"
+  }
+}

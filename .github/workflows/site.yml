@@ -1,0 +1,62 @@
+# Build, check and (after cut-over) deploy brandonbande.co.zw.
+#
+# Every push and pull request: draft build + post-build checks (no deploy).
+# main: release build and deploy of dist/ to GitHub Pages (Settings → Pages → Source must be
+#       "GitHub Actions"). The integrity gate runs with --override: open items
+#       are listed in the log but do not block. Remove --override once every item is approved.
+name: site
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Draft build + checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build (draft)
+        run: python3 scripts/build.py
+      - name: Release gate status (informational)
+        continue-on-error: true
+        run: python3 scripts/build.py --release --out "$RUNNER_TEMP/release-preview"
+
+  deploy:
+    name: Release build + deploy
+    needs: check
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build (release, gate overridden )
+        run: python3 scripts/build.py --release --override
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deployment
+        uses: actions/deploy-pages@v4

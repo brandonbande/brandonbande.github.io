@@ -1,0 +1,84 @@
+{
+  "_meta": {
+    "object": "section",
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null
+  },
+  "id": "standing",
+  "number": "04",
+  "heading": "Professional standing",
+  "bioRef": "person.bio.professional",
+  "timeline": [
+    {
+      "id": "degree",
+      "label": "Telecommunications Engineering degree",
+      "date": null,
+      "evidenceRef": "person.education[0]",
+      "status": "draft"
+    },
+    {
+      "id": "community",
+      "label": "Technology communities and developer advocacy",
+      "date": "2020",
+      "dateDisplay": "From 2020",
+      "evidenceRef": "person.affiliations",
+      "status": "draft"
+    },
+    {
+      "id": "msu",
+      "label": "Business Analyst, Midlands State University",
+      "date": null,
+      "evidenceRef": "person.worksFor",
+      "status": "draft"
+    },
+    {
+      "id": "yail",
+      "label": "Young AI Leaders Hub Gweru / ITU AI for Good",
+      "date": "2025",
+      "evidenceRef": "person.affiliations[2]",
+      "status": "draft"
+    },
+    {
+      "id": "building",
+      "label": "Independent AI building and experimentation",
+      "date": null,
+      "evidenceRef": "sections/05-building, sections/06-exploring",
+      "status": "draft"
+    }
+  ],
+  "evidenceBlocks": [
+    {
+      "id": "ba-contributions",
+      "title": "Institutional systems and business analysis",
+      "itemsRef": "evidence.baContributions"
+    },
+    {
+      "id": "talks",
+      "title": "Selected conferences, talks and workshops",
+      "itemsRef": "evidence.events",
+      "filter": "featured"
+    },
+    {
+      "id": "community",
+      "title": "Community leadership and initiatives",
+      "itemsRef": "person.affiliations"
+    },
+    {
+      "id": "writing",
+      "title": "Publications and technical writing",
+      "itemsRef": "evidence.publications"
+    },
+    {
+      "id": "education",
+      "title": "Education and certifications",
+      "itemsRef": "evidence.certifications"
+    },
+    {
+      "id": "recognition",
+      "title": "Awards, grants and recognition",
+      "itemsRef": "evidence.recognitions",
+      "renderIfEmpty": false
+    }
+  ]
+}

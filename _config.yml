@@ -1,0 +1,11 @@
+# GitHub Pages legacy ("deploy from branch") safety net. The site is deployed from
+# dist/ by .github/workflows/site.yml when Settings → Pages → Source is "GitHub Actions";
+# this file then has no effect. Until then it keeps source folders off the domain.
+exclude:
+  - content/
+  - scripts/
+  - templates/
+  - static/
+  - assets-src/
+  - dist/
+  - README.md

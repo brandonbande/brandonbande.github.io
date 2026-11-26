@@ -1,0 +1,135 @@
+{
+  "_meta": {
+    "object": "section",
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null
+  },
+  "id": "exploring",
+  "number": "06",
+  "heading": "What I am exploring",
+  "projects": [
+    {
+      "id": "fung-ai",
+      "name": "Fung.ai",
+      "category": "Sovereign AI / Enterprise AI / Automation",
+      "description": "Exploring locally deployed AI systems, data residency, private enterprise knowledge and intelligent workflows.",
+      "problem": null,
+      "hypothesis": null,
+      "approach": "Fung.ai explores local, data-residency-first enterprise AI integration, including open-weight language models deployed on client infrastructure, natural-language interfaces to internal information and workflow automation.",
+      "themes": [
+        {
+          "name": "Locally deployed open-weight models",
+          "state": null
+        },
+        {
+          "name": "Private enterprise knowledge and retrieval",
+          "state": null
+        },
+        {
+          "name": "Data residency and data protection",
+          "state": null
+        },
+        {
+          "name": "Prompt-injection safeguards",
+          "state": null
+        },
+        {
+          "name": "PII protection and controlled data egress",
+          "state": null
+        },
+        {
+          "name": "AI-assisted enterprise workflows",
+          "state": null
+        }
+      ],
+      "themesNote": "Set state to 'built', 'prototype' or 'proposed' for each theme. The site must not imply that every proposed feature is production-ready.",
+      "learned": null,
+      "statusLabel": null,
+      "statusNote": "Brandon to confirm, e.g. 'PROTOTYPE' or 'RESEARCH'. Never 'IN PRODUCTION' unless verified.",
+      "collaboration": null,
+      "visuals": [],
+      "status": "draft",
+      "diagram": {
+        "title": "Fung.ai concept: everything stays inside the client's infrastructure",
+        "description": "Staff ask questions in plain language. An open-weight language model, deployed on the client's own infrastructure, retrieves from private enterprise knowledge and drives workflow automation. Data does not leave the boundary.",
+        "boundary": "Client infrastructure",
+        "outside": "Staff",
+        "steps": [
+          "Natural-language interface",
+          "Open-weight model",
+          "Private knowledge retrieval",
+          "Workflow automation"
+        ],
+        "status": "draft",
+        "note": "Brandon to confirm or replace with the real architecture diagram."
+      },
+      "problemNote": "To be written by Brandon.",
+      "hypothesisNote": "To be written by Brandon.",
+      "learnedNote": "To be written by Brandon."
+    },
+    {
+      "id": "vision-sl",
+      "name": "Vision-SL",
+      "category": "Computer Vision / Accessibility / Sign Language Learning",
+      "description": "Exploring accessible sign language learning through computer vision and offline-first desktop applications.",
+      "collaboration": {
+        "text": "In collaboration with Felicia Chuma.",
+        "people": [
+          {
+            "name": "Felicia Chuma",
+            "url": null,
+            "urlNote": "Ask Felicia which link, if any, she wants credited."
+          }
+        ],
+        "required": true
+      },
+      "problem": null,
+      "hypothesis": null,
+      "approach": "Vision-SL has three Linux desktop applications: Admin, Teacher and Student. The Admin application creates a LAN server. Teacher and Student applications discover the server on the local network. Teachers can add signs, create assignments and view coursework. Assignments are automatically marked. Students receive assignments and practise signs. MediaPipe is used for hand tracking. Sign-related data is administered through the Admin application.",
+      "apps": [
+        {
+          "name": "Admin",
+          "role": "Creates the LAN server; administers sign-related data",
+          "state": null
+        },
+        {
+          "name": "Teacher",
+          "role": "Adds signs, creates assignments, views coursework",
+          "state": null
+        },
+        {
+          "name": "Student",
+          "role": "Receives assignments and practises signs",
+          "state": null
+        }
+      ],
+      "learned": null,
+      "relatedWriting": {
+        "title": "Designing Vision-SL",
+        "url": "https://rogue0015.github.io/blogs/designing-vision-sl.html",
+        "status": "draft"
+      },
+      "statusLabel": null,
+      "visuals": [],
+      "status": "draft",
+      "diagram": {
+        "title": "Vision-SL: three desktop apps on one local network",
+        "description": "The Admin application creates a LAN server and holds sign data. Teacher and Student applications discover that server on the local network. Teachers add signs and set assignments; students practise signs with MediaPipe hand tracking, and assignments are marked automatically.",
+        "boundary": "Local network (offline-first)",
+        "outside": null,
+        "hub": "Admin app: LAN server, sign data",
+        "spokes": [
+          "Teacher app: signs, assignments, coursework",
+          "Student app: practice with MediaPipe hand tracking"
+        ],
+        "status": "draft",
+        "note": "Brandon and Felicia to confirm."
+      },
+      "statusNote": "Brandon and Felicia to confirm, e.g. 'PROTOTYPE' or 'PILOTED'. Never 'IN PRODUCTION' unless verified.",
+      "problemNote": "To be written by Brandon.",
+      "hypothesisNote": "To be written by Brandon.",
+      "learnedNote": "To be written by Brandon."
+    }
+  ]
+}

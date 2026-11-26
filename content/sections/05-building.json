@@ -1,0 +1,99 @@
+{
+  "_meta": {
+    "object": "section",
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null
+  },
+  "id": "building",
+  "number": "05",
+  "heading": "What I am building",
+  "product": {
+    "name": "StudyBuddy",
+    "statusLabel": "LAUNCHING Q1 2027",
+    "launchWindow": "2027-Q1",
+    "oneLine": null,
+    "oneLineNote": "Needs Brandon's approved one-sentence description. rogue0015.github.io describes it as a student-centric, AI-powered learning platform for learners in low-resource environments, built on open-weight models. Confirm before reuse.",
+    "url": null,
+    "cta": {
+      "label": "Follow the journey",
+      "alternateLabel": "Explore StudyBuddy",
+      "href": null,
+      "note": "Use 'Explore StudyBuddy' only once a public product destination exists."
+    }
+  },
+  "stages": [
+    {
+      "id": "problem",
+      "label": "The problem",
+      "headline": "Learning doesn't stop when the classroom closes.",
+      "body": null,
+      "bodyNote": "Must describe the real learner problem, backed by validated needs and actual research . Brandon to supply.",
+      "status": "draft"
+    },
+    {
+      "id": "thinking",
+      "label": "The thinking",
+      "headline": "What if learning adapted to the learner?",
+      "steps": [
+        "Understanding learners and their context",
+        "Identifying problems and constraints",
+        "Defining the learning experience",
+        "Exploring possible solutions",
+        "Testing assumptions and refining the product"
+      ],
+      "body": null,
+      "status": "draft"
+    },
+    {
+      "id": "product",
+      "label": "The product",
+      "headline": "Turning an idea into a working system.",
+      "features": [
+        {
+          "name": "AI-powered flashcards",
+          "availability": null
+        },
+        {
+          "name": "Revision and practice experiences",
+          "availability": null
+        },
+        {
+          "name": "Learning support",
+          "availability": null
+        },
+        {
+          "name": "Teacher-facing capabilities",
+          "availability": null
+        },
+        {
+          "name": "Parent-facing capabilities",
+          "availability": null
+        }
+      ],
+      "featuresNote": "Set availability to 'mvp' or 'planned' for each feature. Items left null cannot render in a release build.",
+      "screenshots": [],
+      "screenshotSchema": {
+        "src": "/assets/studybuddy/<file>.avif",
+        "alt": "What the screen shows",
+        "caption": "MVP screenshot, <month year>",
+        "status": "approved"
+      },
+      "status": "draft"
+    },
+    {
+      "id": "progress",
+      "label": "The progress",
+      "headline": "From MVP to Q1 2027 launch.",
+      "milestones": [],
+      "milestoneSchema": {
+        "label": "string",
+        "date": "YYYY-MM or YYYY-MM-DD",
+        "state": "done | in-progress | next",
+        "evidenceUrl": "optional"
+      },
+      "validationNote": "Informal learner validation may be described qualitatively. Never invent user numbers or outcomes.",
+      "status": "draft"
+    }
+  ]
+}

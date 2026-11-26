@@ -1,0 +1,57 @@
+{
+  "_meta": {
+    "object": "faq",
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null
+  },
+  "heading": "Quick answers",
+  "items": [
+    {
+      "id": "ai-adoption",
+      "question": "How does Brandon T. Bande help organisations in Zimbabwe adopt and implement artificial intelligence (AI)?",
+      "answer": "Brandon helps organisations identify practical AI opportunities, develop adoption strategies and integrate AI into existing business operations. His work includes AI agents, workflow automation, open-weight models, enterprise AI integration and responsible AI adoption, with consideration for data privacy, infrastructure and organisational readiness.",
+      "sources": [],
+      "status": "approved"
+    },
+    {
+      "id": "digital-transformation",
+      "question": "How does Brandon T. Bande help businesses achieve digital transformation in Zimbabwe?",
+      "answer": "Brandon helps organisations rethink their operations through business analysis, systems thinking and technology strategy. He assesses existing processes and information systems, identifies digital transformation opportunities, develops requirements and supports the design of practical technology solutions that improve organisational efficiency and decision-making.",
+      "sources": [],
+      "status": "approved"
+    },
+    {
+      "id": "process-improvement",
+      "question": "How does Brandon T. Bande help organisations improve business processes and operational efficiency?",
+      "answer": "Brandon applies systems thinking and business process re-engineering to understand how people, processes, information and technology interact. He identifies operational bottlenecks, analyses workflows, documents business requirements and recommends improvements that help organisations operate more effectively and prepare for sustainable digital transformation.",
+      "sources": [],
+      "status": "approved"
+    },
+    {
+      "id": "ai-skills",
+      "question": "How does Brandon T. Bande help businesses and professionals develop practical AI skills in Zimbabwe?",
+      "answer": "Brandon delivers AI training, corporate workshops and technical sessions covering generative AI, AI agents, automation, open-weight models, AI-assisted productivity and responsible AI adoption. He tailors training to executives, business teams, technical professionals and entrepreneurs, focusing on practical applications that participants can apply in their work.",
+      "sources": [],
+      "status": "approved"
+    },
+    {
+      "id": "who",
+      "question": "Who is Brandon Bande?",
+      "answer": "Brandon Bande is a Zimbabwean Business Analyst, AI builder and technology advocate. He works across business systems, digital transformation and emerging technologies, and speaks at technology conferences and events.",
+      "sources": [
+        "person.bio.oneLine"
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "invite",
+      "question": "How do I invite Brandon Bande to speak at an event?",
+      "answer": "Use the speaking enquiry form on this page. Share the event name, the date if known, the location or format, the type of engagement and a short brief.",
+      "sources": [
+        "sections/08-contact.forms[speaking]"
+      ],
+      "status": "draft"
+    }
+  ]
+}

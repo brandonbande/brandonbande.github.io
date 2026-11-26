@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "object": "section",
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null
+  },
+  "id": "about",
+  "number": "02",
+  "heading": "About me",
+  "toggleLabel": "Choose a perspective",
+  "profiles": [
+    {
+      "id": "systems-thinker",
+      "audience": "business",
+      "tabLabel": "Systems Thinker",
+      "headline": "I look beyond the problem to understand the system creating it.",
+      "paragraphs": [
+        "I am a Business Analyst and technology practitioner interested in how organisations operate, how people interact with systems, and how technology can improve the way work gets done.",
+        "My work sits at the intersection of business strategy, process improvement and emerging technology. I translate complex organisational needs into structured requirements, better workflows and practical digital solutions.",
+        "I think about the entire system: the people, processes, information, technology and decisions that make it work."
+      ],
+      "focusAreas": [
+        "Systems thinking and business analysis",
+        "Business process re-engineering",
+        "Digital transformation",
+        "AI integration and automation",
+        "Data sovereignty and locally deployed AI"
+      ],
+      "link": {
+        "label": "Explore business solutions",
+        "href": "/?for=business#bring"
+      }
+    },
+    {
+      "id": "speaker",
+      "audience": "events",
+      "tabLabel": "Speaker",
+      "headline": "I bring people closer to the ideas shaping our technological future.",
+      "paragraphs": [
+        "I am a technology advocate, speaker and community builder working to make emerging technologies more accessible, practical and inclusive.",
+        "Since 2020, I have been involved in developer communities, technology education and events across Africa and beyond. Through talks, workshops and community initiatives, I explore how people can move beyond consuming technology to understanding, questioning and building with it.",
+        "My speaking is centred on three things: people, technology and impact."
+      ],
+      "focusAreas": [
+        "Artificial intelligence and emerging technologies",
+        "Building with open-weight AI models",
+        "AI agents and autonomous systems",
+        "Digital inclusion and African innovation",
+        "Developer communities and technology education"
+      ],
+      "link": {
+        "label": "Explore speaking engagements",
+        "href": "/?for=events#bring"
+      }
+    }
+  ]
+}

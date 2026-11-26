@@ -1,0 +1,98 @@
+{
+  "_meta": {
+    "object": "ui",
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null
+  },
+  "portraitCaption": "Brandon Bande",
+  "badges": {
+    "mvp": "MVP",
+    "planned": "Planned",
+    "built": "Built",
+    "prototype": "Prototype",
+    "proposed": "Proposed",
+    "now": "Now",
+    "done": "Done",
+    "in-progress": "In progress",
+    "next": "Next"
+  },
+  "bring": {
+    "scope": "What this can include",
+    "themes": "Speaking themes",
+    "formats": "Formats",
+    "reach": "Reach"
+  },
+  "standing": {
+    "biography": "Biography",
+    "timeline": "Timeline",
+    "evidence": "Evidence",
+    "openAnalyticsLink": "Open Analytics Work: analyses published with data and methods"
+  },
+  "building": {
+    "steps": "Design process",
+    "features": "What the product includes",
+    "featuresKey": "MVP means it works in the current build. Planned means it is on the roadmap, not yet available.",
+    "screenshots": "From the MVP",
+    "milestones": "Milestones"
+  },
+  "exploring": {
+    "problem": "Problem or opportunity",
+    "hypothesis": "Hypothesis",
+    "approach": "Approach",
+    "learned": "Learned and built",
+    "collaboration": "Collaboration",
+    "themes": "Areas explored",
+    "apps": "Applications",
+    "related": "Read more",
+    "diagram": "How it fits together",
+    "statusLabel": "Status"
+  },
+  "contact": {
+    "chooser": "What would you like to talk about?",
+    "required": "required",
+    "optional": "optional",
+    "submit": {
+      "business": "Send business enquiry",
+      "speaking": "Send speaking enquiry"
+    },
+    "sending": "Sending…",
+    "success": "Thank you. Your enquiry has arrived, and I'll reply by email.",
+    "failure": "Your enquiry could not be sent. Please try again, or message me on LinkedIn or Sessionize.",
+    "errorRequired": "Please fill in {label}.",
+    "errorEmail": "Please enter a full email address, including the @ sign and the domain.",
+    "errorSummary": "Please correct the highlighted fields.",
+    "privacyLink": "How I handle your details",
+    "general": "Prefer to message me directly?",
+    "choose": "Choose one",
+    "honeypot": "Leave this field empty",
+    "unconfigured": "Online enquiries are being connected and nothing was sent. Until then, please message me on LinkedIn (business) or Sessionize (speaking); the links are beside this form."
+  },
+  "toggleNudge": "Click here",
+  "writing": {
+    "latest": "Latest article",
+    "more": "More articles",
+    "continue": "Continue reading",
+    "readingTime": "min read",
+    "all": "All articles on rogue0015.github.io"
+  },
+  "countries": {
+    "ZW": "Zimbabwe",
+    "ZA": "South Africa",
+    "ZM": "Zambia",
+    "UG": "Uganda",
+    "KE": "Kenya",
+    "NG": "Nigeria",
+    "GH": "Ghana",
+    "RW": "Rwanda",
+    "TZ": "Tanzania",
+    "BW": "Botswana",
+    "MW": "Malawi",
+    "MZ": "Mozambique",
+    "NA": "Namibia",
+    "ET": "Ethiopia",
+    "EG": "Egypt",
+    "MA": "Morocco",
+    "SN": "Senegal"
+  }
+}

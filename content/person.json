@@ -1,0 +1,153 @@
+{
+  "_meta": {
+    "object": "person",
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null
+  },
+  "id": "https://brandonbande.co.zw/#person",
+  "name": "Brandon T. Bande",
+  "brandName": "Brandon Bande",
+  "givenName": "Brandon",
+  "familyName": "Bande",
+  "descriptors": [
+    "Systems Thinker",
+    "AI Builder",
+    "Business Analyst"
+  ],
+  "proposition": "I understand systems. I build solutions. I bring people and technology together.",
+  "supportingStatement": "Bringing business strategy, systems thinking and emerging technology together to solve meaningful problems.",
+  "jobTitle": {
+    "value": "Business Analyst",
+    "status": "draft"
+  },
+  "worksFor": {
+    "name": "Midlands State University",
+    "url": "https://www.msu.ac.zw/",
+    "since": null,
+    "status": "draft",
+    "note": "Confirm the exact title, start date and university URL."
+  },
+  "education": [
+    {
+      "credential": "Degree in Telecommunications Engineering",
+      "institution": null,
+      "year": null,
+      "status": "draft",
+      "note": "Institution and year are missing. Required before the Person JSON-LD can include alumniOf."
+    }
+  ],
+  "nationality": "Zimbabwe",
+  "location": {
+    "locality": "Gweru",
+    "country": "ZW",
+    "display": "Gweru, Zimbabwe",
+    "status": "draft",
+    "note": "Gweru appears on rogue0015.github.io. Show location only if accurate and useful; confirm before use."
+  },
+  "image": {
+    "path": "/assets/portrait/portrait-1000.jpg",
+    "source": "assets-src/portrait-original.jpg",
+    "alt": "Brandon Bande speaking on stage at Mozilla Festival House Zambia, Lusaka, November 2024",
+    "status": "approved",
+    "note": "Cropped (4:5) from assets-src/stage-mozfest-2024-1.jpg, supplied by Brandon on 2026-11-26. Crop and scale only; the face is not altered."
+  },
+  "knowsAbout": [
+    "Systems thinking",
+    "Business analysis",
+    "Business process re-engineering",
+    "Requirements engineering",
+    "Digital transformation",
+    "AI integration and automation",
+    "AI agents",
+    "Open-weight language models",
+    "Edge AI",
+    "Data sovereignty",
+    "African language technology",
+    "Developer communities",
+    "Technology education"
+  ],
+  "affiliations": [
+    {
+      "organisation": "Google Developer Groups Harare",
+      "url": "https://gdg.community.dev/gdg-harare/",
+      "role": "Organiser",
+      "start": null,
+      "end": null,
+      "status": "draft",
+      "note": "Role taken from rogue0015.github.io JSON-LD. Confirm whether it is current or historical."
+    },
+    {
+      "organisation": "Zindi",
+      "url": "https://zindi.africa/",
+      "role": "Former Zimbabwe Country Ambassador",
+      "start": null,
+      "end": null,
+      "status": "draft",
+      "note": "Historical role per rogue0015.github.io. Confirm the dates."
+    },
+    {
+      "organisation": "Young AI Leaders Hub Gweru (ITU AI for Good)",
+      "url": "https://aiforgood.itu.int/young-ai-leaders-community/",
+      "role": "Gweru Hub Lead",
+      "start": "2025",
+      "end": "2027",
+      "status": "draft",
+      "note": "rogue0015.github.io lists 2025–2027 and also 'AI for Good Impact Lead'. Confirm the exact title and term, and whether to show the end date."
+    }
+  ],
+  "communitySince": {
+    "value": 2020,
+    "status": "draft"
+  },
+  "belief": "Africa's future in AI must be shaped by Africans.",
+  "sameAs": [
+    {
+      "url": "https://www.linkedin.com/in/brandoebande/",
+      "label": "LinkedIn",
+      "status": "approved"
+    },
+    {
+      "url": "https://sessionize.com/brandon-bande/",
+      "label": "Sessionize",
+      "status": "approved"
+    },
+    {
+      "url": "https://x.com/Rogue0015",
+      "label": "X",
+      "status": "approved"
+    },
+    {
+      "url": "https://github.com/brandonbande",
+      "label": "GitHub",
+      "status": "approved"
+    },
+    {
+      "url": "https://rogue0015.github.io/",
+      "label": "Writing (Rogue0015)",
+      "status": "approved"
+    },
+    {
+      "url": "https://medium.com/@brandonbande01",
+      "label": "Medium",
+      "status": "approved"
+    },
+    {
+      "url": "https://dev.to/rogue007",
+      "label": "DEV Community",
+      "status": "approved"
+    }
+  ],
+  "sameAsNotes": "Profile list supplied by Brandon on 2026-11-26 (GitHub confirmed as github.com/brandonbande).",
+  "bio": {
+    "status": "draft",
+    "oneLine": "Brandon Bande is a Zimbabwean Business Analyst, AI builder and technology advocate working across business systems, digital transformation and emerging technologies.",
+    "professional": [
+      "Brandon T. Bande is a Zimbabwean Business Analyst, AI builder and technology advocate working at the intersection of business systems, emerging technologies and digital transformation.",
+      "He holds a degree in Telecommunications Engineering and works as a Business Analyst at Midlands State University, where his work involves understanding institutional processes, documenting requirements, supporting business process re-engineering and contributing to the development of digital systems.",
+      "Beyond his professional work, Brandon has been active in technology communities since 2020. He has contributed to developer advocacy and community building through initiatives including Google Developer Groups Harare, Zindi and the Young AI Leaders Hub Gweru, which he leads under the ITU AI for Good initiative.",
+      "His interests include AI agents, open-weight language models, edge AI, data sovereignty and African language technology. Through independent projects, speaking engagements and community initiatives, he explores how emerging technologies can address practical challenges and create meaningful opportunities.",
+      "His guiding belief is that Africa's future in AI must be shaped by Africans."
+    ]
+  }
+}

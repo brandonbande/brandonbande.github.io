@@ -1,0 +1,56 @@
+{
+  "_meta": {
+    "object": "section",
+    "status": "draft"
+  },
+  "id": "writing",
+  "number": "07",
+  "heading": "Writing on AI, systems and communities",
+  "intro": "I write about building practical AI on a budget, data sovereignty, developer communities and Zimbabwe's technology scene, mostly from projects I am working on.",
+  "featured": {
+    "title": "Solving AI: Borrowing from Biomimicry and Society",
+    "url": "https://rogue0015.github.io/blogs/solving-ai-borrowing-from-biomimicry-and-society.html",
+    "date": "2026-11-24",
+    "readingMinutes": 7,
+    "summary": "How designing a multi-persona AI automation system led me to borrow from nature, human onboarding, and workplace access control — and what that means for building resilient AI on a budget.",
+    "excerpt": [
+      "I wonder who holds the most patents in this world, and how they would compare to God. Every time we face a hard problem, the best answers seem to come from studying nature. From aerodynamics to architecture — and now to AI. We even have a word for it: biomimicry.",
+      "One day I sat down writing system instructions for an AI prompt destined to be part of Fung.ai. The goal was enterprise-wide automation: defining roles, permissions, tone, and context for every job the system would handle. After the third role, I had had enough. The file was bloating, the logic was tangled, and there had to be a better way."
+    ],
+    "temporary": true,
+    "status": "draft"
+  },
+  "articles": [
+    {
+      "title": "The show must go on",
+      "url": "https://rogue0015.github.io/blogs/the-show-must-go-on.html",
+      "date": "2026-11-14"
+    },
+    {
+      "title": "Icarus: Testing the Limits of What a Browser Can Do",
+      "url": "https://rogue0015.github.io/blogs/icarus-testing-browser-limits.html",
+      "date": "2026-11-06"
+    },
+    {
+      "title": "Data-Sovereign AI and Automated Workflows: Building Fung.ai",
+      "url": "https://rogue0015.github.io/blogs/data-sovereign-ai-and-automated-workflows.html",
+      "date": "2026-11-01"
+    },
+    {
+      "title": "Designing Vision-SL: A preview into what we considered",
+      "url": "https://rogue0015.github.io/blogs/designing-vision-sl.html",
+      "date": "2026-10-31"
+    },
+    {
+      "title": "Developer Community Events: PyCon ZA & DevFest Harare",
+      "url": "https://rogue0015.github.io/blogs/around-and-back.html",
+      "date": "2026-10-28"
+    },
+    {
+      "title": "No Data, No Problem",
+      "url": "https://rogue0015.github.io/blogs/no-data-no-problem.html",
+      "date": "2026-10-03"
+    }
+  ],
+  "allUrl": "https://rogue0015.github.io/blogs/"
+}

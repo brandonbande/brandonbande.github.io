@@ -1,0 +1,116 @@
+/* Design tokens: the single source for colour, type, space, motion and layout values.
+   Rationale, contrast ratios and usage rules: 
+   Change values here only; never hard-code them in component CSS. */
+
+:root {
+  /* ---- Palette (raw) ---------------------------------------------------- */
+  --c-ink: #0F100E;              /* near-black */
+  --c-charcoal: #1A1B18;
+  --c-paper: #F4F1EA;            /* warm white */
+  --c-paper-2: #E8E4D9;
+  --c-lime: #C6F24E;             /* the one accent */
+  --c-lime-ink: #4A6400;         /* accent as TEXT on light surfaces (5.98:1 on paper) */
+  --c-grey-on-dark: #A3A39A;     /* 7.51:1 on ink */
+  --c-grey-on-light: #5C5C55;    /* 5.97:1 on paper */
+  --c-line-on-dark: #34352F;     /* decorative rules only */
+  --c-line-on-light: #CFCABD;    /* decorative rules only */
+  --c-control-on-dark: #74756C;  /* input borders, 4.09:1 on ink (WCAG 1.4.11) */
+  --c-control-on-light: #858175; /* input borders, 3.45:1 on paper */
+  --c-error-on-dark: #FF8A7A;
+  --c-error-on-light: #A8261B;
+
+  /* ---- Semantic: dark surface (default) ---------------------------------- */
+  --bg: var(--c-ink);
+  --surface: var(--c-charcoal);
+  --text: var(--c-paper);
+  --text-muted: var(--c-grey-on-dark);
+  --line: var(--c-line-on-dark);
+  --control: var(--c-control-on-dark);
+  --accent: var(--c-lime);
+  --accent-text: var(--c-lime);
+  --on-accent: var(--c-ink);
+  --focus: var(--c-lime);
+  --error: var(--c-error-on-dark);
+
+  /* ---- Type ----------------------------------------------------------------- */
+  --font-display: "Archivo", "Archivo Fallback", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font-body: "Archivo", "Archivo Fallback", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", "JetBrains Mono Fallback", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --header-h: 4.25rem;
+
+  --fs-display: clamp(3.25rem, 1.6rem + 7.2vw, 8.5rem);   /* hero name */
+  --fs-h1: clamp(2.5rem, 1.6rem + 3.6vw, 4.75rem);
+  --fs-h2: clamp(1.875rem, 1.4rem + 2vw, 3rem);
+  --fs-h3: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  --fs-lead: clamp(1.125rem, 1.05rem + 0.35vw, 1.375rem);
+  --fs-body: 1.0625rem;                                    /* 17px */
+  --fs-small: 0.9375rem;                                   /* 15px */
+  --fs-label: 0.75rem;                                     /* 12px mono caps, letter-spaced */
+
+  --lh-tight: 1.02;
+  --lh-heading: 1.12;
+  --lh-body: 1.65;
+  --tracking-display: -0.035em;
+  --tracking-label: 0.14em;
+  --measure: 66ch;
+
+  /* ---- Space (4px base) ----------------------------------------------------- */
+  --s-1: 0.25rem; --s-2: 0.5rem; --s-3: 0.75rem; --s-4: 1rem; --s-5: 1.5rem;
+  --s-6: 2rem; --s-7: 3rem; --s-8: 4rem; --s-9: 6rem; --s-10: 8rem; --s-11: 10rem;
+  --gutter: clamp(1rem, 0.4rem + 3vw, 3rem);
+  --section-pad: clamp(4rem, 2rem + 8vw, 10rem);
+
+  /* ---- Layout --------------------------------------------------------------- */
+  --max-page: 90rem;      /* 1440px */
+  --max-text: 42rem;
+  --radius: 2px;          /* editorial: near-square corners */
+  --tap: 44px;
+
+  /* ---- Motion --------------------------------------------------------------- */
+  --dur-instant: 120ms;
+  --dur-quick: 200ms;
+  --dur-base: 320ms;
+  --dur-slow: 560ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-exit: cubic-bezier(0.3, 0, 1, 1);
+  --reveal-distance: 16px;
+}
+
+/* Light (paper) surface: apply to any section or page that reads on warm white. */
+.surface-light {
+  --bg: var(--c-paper);
+  --surface: var(--c-paper-2);
+  --text: var(--c-ink);
+  --text-muted: var(--c-grey-on-light);
+  --line: var(--c-line-on-light);
+  --control: var(--c-control-on-light);
+  --accent: var(--c-lime);
+  --accent-text: var(--c-lime-ink);
+  --on-accent: var(--c-ink);
+  --focus: var(--c-ink);
+  --error: var(--c-error-on-light);
+}
+
+/* Dark surface inside a light context (e.g. a header band on a paper page). */
+.surface-dark {
+  --bg: var(--c-ink);
+  --surface: var(--c-charcoal);
+  --text: var(--c-paper);
+  --text-muted: var(--c-grey-on-dark);
+  --line: var(--c-line-on-dark);
+  --control: var(--c-control-on-dark);
+  --accent: var(--c-lime);
+  --accent-text: var(--c-lime);
+  --on-accent: var(--c-ink);
+  --focus: var(--c-lime);
+  --error: var(--c-error-on-dark);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-quick: 0ms;
+    --dur-base: 0ms;
+    --dur-slow: 0ms;
+    --reveal-distance: 0px;
+  }
+}

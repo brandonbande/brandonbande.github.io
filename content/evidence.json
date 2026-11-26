@@ -1,0 +1,138 @@
+{
+  "_meta": {
+    "object": "evidence",
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null
+  },
+  "schemas": {
+    "event": {
+      "name": "Event name",
+      "date": "YYYY-MM-DD",
+      "city": "City",
+      "country": "ISO 3166-1 alpha-2, e.g. ZW",
+      "type": "conference | meetup | workshop | panel | keynote | hackathon | other",
+      "role": "speaker | panellist | facilitator | organiser | mc",
+      "talkTitle": "optional",
+      "attendance": "integer or null (organiser-reported total attendance)",
+      "attendanceSource": "where the attendance figure comes from",
+      "evidenceUrl": "event page, Sessionize listing, recording, photo album or post",
+      "featured": "true to show in Professional Standing",
+      "status": "draft | verified"
+    },
+    "publication": {
+      "title": "",
+      "venue": "",
+      "date": "YYYY-MM-DD",
+      "url": "",
+      "type": "article | paper | talk-recording | report",
+      "status": "draft | verified"
+    },
+    "certification": {
+      "name": "",
+      "issuer": "",
+      "date": "YYYY-MM",
+      "credentialUrl": "",
+      "status": "draft | verified"
+    },
+    "recognition": {
+      "name": "",
+      "issuer": "",
+      "date": "YYYY-MM",
+      "url": "",
+      "status": "draft | verified"
+    },
+    "baContribution": {
+      "title": "",
+      "summary": "Plain-language description of what Brandon did (not what the team did)",
+      "period": "",
+      "shareable": "true only if the institution permits public mention",
+      "status": "draft | verified"
+    }
+  },
+  "statDefinitions": {
+    "events-count": "Number of conferences and events listed below in which Brandon had a speaking, panel or facilitation role.",
+    "attendee-reach": null,
+    "countries": "Distinct countries across the events listed below."
+  },
+  "statDefinitionsNote": "attendee-reach needs Brandon's chosen definition, e.g. 'Combined organiser-reported attendance at events where I spoke. This is not the number of people I personally trained.'",
+  "events": [
+    {
+      "name": "Mozilla Festival House Zambia",
+      "date": "2024-11-20",
+      "endDate": "2024-11-21",
+      "city": "Lusaka",
+      "country": "ZM",
+      "type": "conference",
+      "role": "speaker",
+      "talkTitle": "Democratizing AI for Africa: Building to ensure inclusive access and responsible development",
+      "format": "Lightning talk",
+      "attendance": null,
+      "attendanceSource": null,
+      "evidenceUrl": null,
+      "evidenceNote": "Stage photographs supplied by Brandon (assets-src/stage-mozfest-2024-*.jpg) show the title slide with name, date and city. Add a public event or recording URL when available.",
+      "featured": true,
+      "status": "draft"
+    },
+    {
+      "name": "PyCon ZA",
+      "date": null,
+      "city": null,
+      "country": "ZA",
+      "type": "conference",
+      "role": "speaker",
+      "talkTitle": null,
+      "attendance": null,
+      "attendanceSource": null,
+      "evidenceUrl": null,
+      "featured": true,
+      "status": "draft"
+    },
+    {
+      "name": "PyCon Africa",
+      "date": null,
+      "city": null,
+      "country": null,
+      "type": "conference",
+      "role": "speaker",
+      "talkTitle": null,
+      "attendance": null,
+      "attendanceSource": null,
+      "evidenceUrl": null,
+      "featured": true,
+      "status": "draft"
+    },
+    {
+      "name": "DevFest Mbarara",
+      "date": null,
+      "city": "Mbarara",
+      "country": "UG",
+      "type": "conference",
+      "role": "speaker",
+      "talkTitle": null,
+      "attendance": null,
+      "attendanceSource": null,
+      "evidenceUrl": null,
+      "featured": true,
+      "status": "draft"
+    }
+  ],
+  "publications": [],
+  "certifications": [],
+  "recognitions": [],
+  "baContributions": [],
+  "externalSources": [
+    {
+      "name": "Sessionize speaker profile",
+      "url": "https://sessionize.com/brandon-bande/",
+      "use": "Candidate source for the events list",
+      "status": "draft"
+    },
+    {
+      "name": "rogue0015.github.io",
+      "url": "https://rogue0015.github.io/",
+      "use": "Existing portfolio; states '27 conferences' and '5,000+ developers'. Reconcile with the 30+ / 5,000+ / 6 figures shown on this site",
+      "status": "draft"
+    }
+  ]
+}
