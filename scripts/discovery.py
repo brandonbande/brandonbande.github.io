@@ -5,6 +5,7 @@ page are marked up .
 """
 
 import json
+import re
 
 SEARCH_AND_ANSWER_BOTS = ["Googlebot", "Bingbot", "OAI-SearchBot", "ChatGPT-User", "PerplexityBot",
                           "Perplexity-User", "Claude-SearchBot", "Claude-User", "DuckAssistBot", "Applebot"]
@@ -59,6 +60,13 @@ def person_node(content, full=True):
     return _clean(node)
 
 
+def _datetime(value):
+    """A content date (YYYY-MM-DD) as an ISO 8601 datetime at midnight UTC; schema.org dates here are DateTimes."""
+    if isinstance(value, str) and re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+        return f"{value}T00:00:00+00:00"
+    return value
+
+
 def home_graph(content, faq_items, lastmod):
     site, base = content.site, content.site["url"].rstrip("/")
     pid = content.person["id"]
@@ -91,7 +99,7 @@ def home_graph(content, faq_items, lastmod):
                       "itemListElement": [
                           {"@type": "ListItem", "position": i, "item": _clean({
                               "@type": "BlogPosting", "headline": a["title"], "url": a["url"],
-                              "datePublished": a["date"], "description": a.get("summary"), "author": {"@id": pid}})}
+                              "datePublished": _datetime(a["date"]), "description": a.get("summary"), "author": {"@id": pid}})}
                           for i, a in enumerate(posts, 1)]})
     if faq_items:
         graph.append({"@type": "FAQPage", "@id": f"{base}/#faq", "mainEntity": [

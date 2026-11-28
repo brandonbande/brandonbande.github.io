@@ -318,6 +318,14 @@ def display_date(d):
     return f"{d.day} {d.strftime('%b %Y')}"
 
 
+def iso_datetime(d):
+    """Front-matter date as an ISO 8601 datetime (midnight UTC, as in the RSS feed).
+
+    schema.org datePublished/dateModified and OG article times are DateTimes; Google flags date-only values.
+    """
+    return datetime(d.year, d.month, d.day, tzinfo=timezone.utc).isoformat()
+
+
 def truncate(s, limit=180):
     s = " ".join(s.split())
     return s if len(s) <= limit else s[: limit - 1].rstrip() + "…"
@@ -542,8 +550,8 @@ def build_post(post, older, newer, cfg):
             "keywords": ", ".join(post["tags"]),
             "url": post["url"],
             "mainEntityOfPage": post["canonical"],
-            "datePublished": post["date"].isoformat(),
-            "dateModified": post["updated"].isoformat(),
+            "datePublished": iso_datetime(post["date"]),
+            "dateModified": iso_datetime(post["updated"]),
             "inLanguage": cfg["lang"],
             "wordCount": post["words"],
             "image": cfg["image_url"],
@@ -613,8 +621,8 @@ def build_post(post, older, newer, cfg):
   <p class="cta-row"><a class="btn" href="{attr(consult.get("href", "/#contact"))}" data-goatcounter-click="{attr(consult.get("analyticsEvent", ""))}">Discuss a business challenge</a> <a class="btn btn-ghost" href="{attr(cfg["path"])}">All analytics work</a></p>
 </aside>"""
 
-    article_meta = (f'<meta property="article:published_time" content="{post["date"].isoformat()}">\n'
-                    f'<meta property="article:modified_time" content="{post["updated"].isoformat()}">\n'
+    article_meta = (f'<meta property="article:published_time" content="{iso_datetime(post["date"])}">\n'
+                    f'<meta property="article:modified_time" content="{iso_datetime(post["updated"])}">\n'
                     + "".join(f'<meta property="article:tag" content="{attr(t)}">\n' for t in post["tags"]))
     return PAGE.substitute(
         head_common(cfg),
