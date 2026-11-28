@@ -25,7 +25,7 @@ import shutil
 import subprocess
 import sys
 import time
-from datetime import date
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -56,16 +56,22 @@ def safe_out(out):
 
 
 def homepage_lastmod(today):
-    """Last commit date of the homepage sources, or today if they have uncommitted changes."""
+    """Last commit time of the homepage sources (ISO 8601 with offset), or now if they have uncommitted changes.
+
+    A full datetime, not a bare date: schema.org dateModified is a DateTime and Google flags date-only values.
+    """
+    def now():
+        return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
+
     def git(*args):
         return subprocess.run(["git", *args, "--", *HOME_SOURCES], cwd=ROOT,
                               capture_output=True, text=True, check=True).stdout.strip()
     try:
         if git("status", "--porcelain"):
-            return today.isoformat()
-        return git("log", "-1", "--format=%cs") or today.isoformat()
+            return now()
+        return git("log", "-1", "--format=%cI") or now()
     except (OSError, subprocess.CalledProcessError):
-        return today.isoformat()
+        return now()
 
 
 def sitemap(rows):
