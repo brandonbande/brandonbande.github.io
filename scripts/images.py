@@ -86,7 +86,7 @@ def og_card(portrait, person, site, dest):
         y += 38
     draw.text((tx, H - 70), site["url"].replace("https://", ""), font=font(20, mono=True), fill=GREY)
     dest.parent.mkdir(parents=True, exist_ok=True)
-    card.save(dest, "JPEG", quality=72, optimize=True, progressive=True)
+    card.save(dest, "JPEG", quality=72, optimize=True)  # baseline: some link-preview scrapers reject progressive JPEGs
 
 
 def main():

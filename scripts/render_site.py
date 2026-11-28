@@ -6,6 +6,7 @@ content/. Section bodies live in render_sections.py; structured data in discover
 
 import html
 import re
+import mimetypes
 from datetime import date
 from pathlib import Path
 from string import Template
@@ -62,7 +63,9 @@ class Renderer:
         og = self.site.get("ogImage", {})
         if (STATIC / og.get("path", "/none").lstrip("/")).exists():
             image, alt, card = self.base_url + og["path"], og.get("alt", ""), "summary_large_image"
-            dims = (f'<meta property="og:image:width" content="{og["width"]}">\n'
+            dims = (f'<meta property="og:image:secure_url" content="{attr(self.base_url + og["path"])}">\n'
+                    f'<meta property="og:image:type" content="{mimetypes.guess_type(og["path"])[0] or "image/jpeg"}">\n'
+                    f'<meta property="og:image:width" content="{og["width"]}">\n'
                     f'<meta property="og:image:height" content="{og["height"]}">\n')
         else:
             img = self.person.get("image", {})
