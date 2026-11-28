@@ -142,7 +142,7 @@ class Renderer:
             items.append(f'<li><a href="{attr(href)}">{esc(n["label"])}</a></li>')
         return tpl("header.html").substitute(
             home_href="#home" if on_home else "/",
-            brand=esc(self.person["brandName"]),
+            brand=esc(self.person["name"]),
             nav_items="".join(items),
             ctas=self.cta_links("compact"),
         )

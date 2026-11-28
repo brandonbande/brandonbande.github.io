@@ -547,7 +547,7 @@ class Sections:
                         else self.pending(sec.get("bodyNote"))) for sec in pg["sections"])
         return f"""<section class="section surface-light legal" aria-labelledby="legal-title">
   <div class="wrap narrow">
-    <p class="section-label"><a href="/">{esc(self.c.person["brandName"])}</a></p>
+    <p class="section-label"><a href="/">{esc(self.c.person["name"])}</a></p>
     <h1 id="legal-title" class="display-sm">{esc(pg["title"])}</h1>
     <p class="lead">{esc(pg["intro"])}</p>
     <p class="mono small"><time datetime="{attr(pg["updated"])}">{esc(pg["updated"])}</time></p>

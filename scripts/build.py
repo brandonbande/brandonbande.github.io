@@ -154,9 +154,10 @@ def main(argv=None):
     rows = [(f"{site_url}/", lastmod), (f"{site_url}/privacy/", lastmod)] + oa_rows
     (out / "sitemap.xml").write_text(sitemap(rows), encoding="utf-8")
     (out / "robots.txt").write_text(discovery.robots_txt(content), encoding="utf-8")
+    (out / "site.webmanifest").write_text(discovery.web_manifest(content), encoding="utf-8")
     (out / "llms.txt").write_text(discovery.llms_txt(content, renderer.sections.faq_items(), open_analytics.PUBLISHED),
                                   encoding="utf-8")
-    print(f"  built  sitemap.xml ({len(rows)} URLs), robots.txt, llms.txt")
+    print(f"  built  sitemap.xml ({len(rows)} URLs), robots.txt, llms.txt, site.webmanifest")
 
     # 7. Checks
     errors, warnings, stats = site_checks.run(out, content, args.release, renderer.critical_css_bytes())

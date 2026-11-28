@@ -102,7 +102,7 @@ def load_config():
             "sameAs": [s["url"] for s in person.get("sameAs", [])],
         },
         "author_name": person["name"],
-        "brand_name": person.get("brandName", person["name"]),
+        "brand_name": person["name"],
     }
 
 

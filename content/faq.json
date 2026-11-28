@@ -37,8 +37,8 @@
     },
     {
       "id": "who",
-      "question": "Who is Brandon Bande?",
-      "answer": "Brandon Bande is a Zimbabwean Business Analyst, AI builder and technology advocate. He works across business systems, digital transformation and emerging technologies, and speaks at technology conferences and events.",
+      "question": "Who is Brandon T. Bande?",
+      "answer": "Brandon T. Bande is a Zimbabwean Business Analyst, AI builder and technology advocate. He works across business systems, digital transformation and emerging technologies, and speaks at technology conferences and events.",
       "sources": [
         "person.bio.oneLine"
       ],
@@ -46,7 +46,7 @@
     },
     {
       "id": "invite",
-      "question": "How do I invite Brandon Bande to speak at an event?",
+      "question": "How do I invite Brandon T. Bande to speak at an event?",
       "answer": "Use the speaking enquiry form on this page. Share the event name, the date if known, the location or format, the type of engagement and a short brief.",
       "sources": [
         "sections/08-contact.forms[speaking]"

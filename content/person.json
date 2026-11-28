@@ -48,7 +48,7 @@
   "image": {
     "path": "/assets/portrait/portrait-1000.jpg",
     "source": "assets-src/portrait-original.jpg",
-    "alt": "Brandon Bande speaking on stage at Mozilla Festival House Zambia, Lusaka, November 2024",
+    "alt": "Brandon T. Bande speaking on stage at Mozilla Festival House Zambia, Lusaka, November 2024",
     "status": "approved",
     "note": "Cropped (4:5) from assets-src/stage-mozfest-2024-1.jpg, supplied by Brandon on 2026-11-26. Crop and scale only; the face is not altered."
   },
@@ -141,7 +141,7 @@
   "sameAsNotes": "Profile list supplied by Brandon on 2026-11-26 (GitHub confirmed as github.com/brandonbande).",
   "bio": {
     "status": "draft",
-    "oneLine": "Brandon Bande is a Zimbabwean Business Analyst, AI builder and technology advocate working across business systems, digital transformation and emerging technologies.",
+    "oneLine": "Brandon T. Bande is a Zimbabwean Business Analyst, AI builder and technology advocate working across business systems, digital transformation and emerging technologies.",
     "professional": [
       "Brandon T. Bande is a Zimbabwean Business Analyst, AI builder and technology advocate working at the intersection of business systems, emerging technologies and digital transformation.",
       "He holds a degree in Telecommunications Engineering and works as a Business Analyst at Midlands State University, where his work involves understanding institutional processes, documenting requirements, supporting business process re-engineering and contributing to the development of digital systems.",

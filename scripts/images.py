@@ -4,6 +4,7 @@
 Reads the approved portrait original (person.json → image.source) and writes:
   static/assets/portrait/portrait-<w>.webp and .jpg  responsive variants (never upscaled)
   static/assets/og/brandon-bande-og.jpg             1200×630 social card
+  static/favicon.svg, favicon.ico, icons/*.png      site icon in every format browsers ask for
   assets-src/images.json                            manifest read by scripts/build.py
 
 The face is never generated or altered: only crop, scale and re-encode .
@@ -78,8 +79,9 @@ def og_card(portrait, person, site, dest):
     draw = ImageDraw.Draw(card)
     draw.rectangle([x0 + H, 0, x0 + H + 8, H], fill=LIME)
     tx = x0 + H + 44
-    draw.text((tx, 150), person["brandName"].split()[0], font=font(64, 800), fill=PAPER)
-    draw.text((tx, 218), person["brandName"].split()[-1] + ".", font=font(64, 800), fill=PAPER)
+    *given, family = person["name"].split()
+    draw.text((tx, 150), " ".join(given), font=font(64, 800), fill=PAPER)
+    draw.text((tx, 218), family + ".", font=font(64, 800), fill=PAPER)
     y = 330
     for d in person["descriptors"]:
         draw.text((tx, y), d.rstrip(".").upper(), font=font(22, mono=True), fill=LIME if y == 330 else GREY)
@@ -89,11 +91,71 @@ def og_card(portrait, person, site, dest):
     card.save(dest, "JPEG", quality=72, optimize=True)  # baseline: some link-preview scrapers reject progressive JPEGs
 
 
+ICON_SIZES = {"icon-48.png": 48, "icon-192.png": 192, "icon-512.png": 512}
+
+# The mark on a 64-unit grid, drawn in paint order: ink tile, a geometric 'B' (stem and two bowls
+# whose right corners are rounded, then their counters), and the lime block. One definition feeds
+# favicon.svg and every raster icon, so all browsers show the same thing whatever fonts they have.
+# Each shape: (x0, y0, x1, y1, right-corner radius, colour).
+ICON_SHAPES = [
+    (0, 0, 64, 64, 0, INK),
+    (10, 16, 33, 31.5, 7.75, PAPER),     # top bowl
+    (10, 29, 36, 47, 9, PAPER),          # bottom bowl
+    (17, 21.5, 26.5, 26.5, 2.5, INK),    # top counter
+    (17, 35, 28, 41.5, 3.25, INK),       # bottom counter
+    (42, 38, 51, 47, 0, LIME),
+]
+
+
+def _hex(rgb):
+    return "#%02X%02X%02X" % rgb
+
+
+def icon_svg():
+    parts = []
+    for x0, y0, x1, y1, r, c in ICON_SHAPES:
+        if r:
+            d = (f"M{x0} {y0}H{x1 - r}A{r} {r} 0 0 1 {x1} {y0 + r}V{y1 - r}"
+                 f"A{r} {r} 0 0 1 {x1 - r} {y1}H{x0}Z")
+            parts.append(f'<path d="{d}" fill="{_hex(c)}"/>')
+        else:
+            parts.append(f'<rect x="{x0}" y="{y0}" width="{x1 - x0}" height="{y1 - y0}" fill="{_hex(c)}"/>')
+    return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">' + "".join(parts) + "</svg>\n"
+
+
+def icon_master(size=512):
+    k = size / 64
+    im = Image.new("RGB", (size, size), INK)
+    draw = ImageDraw.Draw(im)
+    for x0, y0, x1, y1, r, c in ICON_SHAPES:
+        box = [x0 * k, y0 * k, x1 * k - 1, y1 * k - 1]
+        if r:
+            radius = min(r * k, (box[3] - box[1]) / 2 - 1)  # Pillow rejects a radius of half the height or more
+            draw.rounded_rectangle(box, radius=radius, fill=c, corners=(False, True, True, False))
+        else:
+            draw.rectangle(box, fill=c)
+    return im
+
+
+def icons(static_dir):
+    """favicon.svg, favicon.ico (16/32/48), icons/*.png, and /apple-touch-icon.png at the root,
+    where iOS and some crawlers request it without reading the page."""
+    (static_dir / "favicon.svg").write_text(icon_svg(), encoding="utf-8")
+    master = icon_master()
+    out = static_dir / "icons"
+    out.mkdir(parents=True, exist_ok=True)
+    for name, px in ICON_SIZES.items():
+        master.resize((px, px), Image.LANCZOS).save(out / name, "PNG", optimize=True)
+    master.resize((180, 180), Image.LANCZOS).save(static_dir / "apple-touch-icon.png", "PNG", optimize=True)
+    master.save(static_dir / "favicon.ico", sizes=[(16, 16), (32, 32), (48, 48)])
+
+
 def main():
     person, site = load_json("content/person.json"), load_json("content/site.json")
     src = ROOT / person["image"]["source"]
     if not src.exists():
         sys.exit(f"Portrait original not found: {src}")
+    icons(ROOT / "static")
     portrait, variants = portrait_variants(src, ROOT / "static/assets/portrait")
     og_dest = ROOT / site["ogImage"]["path"].lstrip("/").replace("assets/", "static/assets/", 1)
     og_card(portrait, person, site, og_dest)

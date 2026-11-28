@@ -137,7 +137,7 @@ def run(dist, content, release, critical_css_bytes=0):
     person = content.person
     if home.exists():
         page = home.read_text(encoding="utf-8")
-        for needle in [person["brandName"]] + [d.rstrip(".") for d in person["descriptors"]]:
+        for needle in [person["name"]] + [d.rstrip(".") for d in person["descriptors"]]:
             if needle.lower() not in page.lower():
                 errors.append(f"dist/index.html: entity string '{needle}' (person.json) not visible")
         scan = _Scan()

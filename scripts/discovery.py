@@ -71,7 +71,7 @@ def home_graph(content, faq_items, lastmod):
     site, base = content.site, content.site["url"].rstrip("/")
     pid = content.person["id"]
     graph = [person_node(content, full=True)]
-    graph.append({"@type": "WebSite", "@id": f"{base}/#website", "url": f"{base}/", "name": site["name"],
+    graph.append({"@type": "WebSite", "@id": f"{base}/#website", "url": f"{base}/", "name": site["name"], "alternateName": content.person.get("brandName"),
                   "description": site["description"], "inLanguage": site["language"], "publisher": {"@id": pid}})
     graph.append({"@type": "ProfilePage", "@id": f"{base}/#profile", "url": f"{base}/", "name": site["title"],
                   "dateModified": lastmod, "inLanguage": site["language"], "mainEntity": {"@id": pid},
@@ -127,12 +127,12 @@ def llms_txt(content, faq_items, oa_pieces):
     events = next(o for o in bring["offerings"] if o["id"] == "events")
     prod = content["sections/05-building"]["product"]
     lines = [f"# {p['name']}", "", f"> {site['llms']['summary']}", "",
-             f"{p['brandName']}: {', '.join(d.rstrip('.') for d in p['descriptors'])}.", "",
+             f"{p['name']}: {', '.join(d.rstrip('.') for d in p['descriptors'])}.", "",
              "## Services for organisations", ""]
     lines += [f"- {s['name']}: {s['summary']}" for s in business["services"]]
     lines += [f"- [Enquire about a business challenge]({base}/?for=business#contact)", "",
               "## Speaking", "", f"Themes: {'; '.join(events['themes'])}.", f"Formats: {'; '.join(events['formats'])}.",
-              f"- [Invite {p['brandName']} to speak]({base}/?for=events#contact)", "", "## Projects", ""]
+              f"- [Invite {p['name']} to speak]({base}/?for=events#contact)", "", "## Projects", ""]
     lines.append(f"- {prod['name']} ({prod['statusLabel'].title()}): "
                  f"{prod.get('oneLine') or 'Flagship learning product in development.'} [{base}/#building]")
     for proj in content["sections/06-exploring"]["projects"]:
@@ -168,3 +168,14 @@ def robots_txt(content):
         out += [f"User-agent: {bot}", "Allow: /" if allow_training else "Disallow: /", ""]
     out += ["User-agent: *", "Allow: /", "", f"Sitemap: {base}/sitemap.xml", ""]
     return "\n".join(out)
+
+
+def web_manifest(content):
+    """site.webmanifest: names and colours from content/, icons written by scripts/images.py."""
+    site, person = content.site, content.person
+    return json.dumps({
+        "name": site["name"], "short_name": person["name"],
+        "start_url": "/", "display": "browser",
+        "background_color": site.get("themeColor") or "#0F100E", "theme_color": site.get("themeColor") or "#0F100E",
+        "icons": [{"src": f"/icons/icon-{px}.png", "sizes": f"{px}x{px}", "type": "image/png"} for px in (192, 512)],
+    }, ensure_ascii=False, indent=2) + "\n"
